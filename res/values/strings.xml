@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeatherYahooApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="strSettingTitle">Weather Setting Screen</string>
+
+    <!-- name of view -->
+    <string name="btn_search">Search</string>
+    <string name="hint_input_country"> Input Location </string>
+
+    <!-- About menu -->
+    <string name="about_menu"> About </string>
+    <string name="about_app">About Application</string>
+    <string name="tv_app">Application: Weather</string>
+    <string name="tv_author">Author: BachVanHai</string>
+    <string name="tv_version">Version: Demo</string>
+    <string name="tv_subject">Subject: ProjectII</string>
+
+    <!-- Setting menu -->
+    <string name="setting_menu">Setting</string>
+    <string name="strOnSearching"> Please wait for searching .... </string>
+    <string name="strOnUpdating">Please wait for updating ....</string>
+    <string name="strFetchingData">Please wait fetching data ....</string>
+    <string name="strFetchFailed">Please check, get failed </string>
+    <string name="strGetSuccess">Weather updated</string>
+    <string name="strUpdating">Updating weather of location</string>
+    <string name="tv_tempe">***</string>
+    <string name="tv_humidity">Humidity</string>
+    <string name="tv_no_data">***</string>
+    <string name="tv_visibility">Visibility</string>
+    <string name="str_temperature_fmt">%s°C</string>
+    <string name="str_temperature_fmt_f">%s°F</string>
+    <string name="str_humidity_fmt">%s%%</string>
+    <string name="str_visi_fmt">%s mi</string>
+    <string name="defalt_menu_name">No name</string>
+    <string name="selectTimeUpdate">Auto update</string>
+    <string name="title_context_menu_setting">Yahoo Weather Setting</string>
+    <string name="context_menu_changeLocation"> Set weather Location</string>
+    <string name="temperature_unit">Temperature unit</string>
+    <string name="context_menu_update_time">AutoUpdate</string>
+    <string name="selectTemperatureUnit">Set your prefer unit</string>
+
+    <!-- Demo about data -->
+    <string name="demo_location">United Stated</string>
+    <string name="demo_temp">30</string>
+    
+    <string name="demo_date">Fri Mar 22 7:07 AM</string>
+    <string name="str_sunset">Sunset</string>
+    <string name="str_sunrise">Sunrise</string>
+    <string name="str_max_temp">max</string>
+    <string name="str_low_temp">min</string>
+
+</resources>

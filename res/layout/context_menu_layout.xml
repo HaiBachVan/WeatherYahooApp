@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/context_width"
+    android:layout_height="@dimen/context_height"
+    android:background="@layout/weather_selector"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/itemLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@layout/weather_selector"
+        android:drawablePadding="@dimen/context_draw_padding"
+        android:gravity="center_vertical"
+        android:padding="@dimen/context_padding"
+        android:textSize="@dimen/context_font_size" >
+    </TextView>
+
+</LinearLayout>
