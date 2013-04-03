@@ -42,24 +42,26 @@ public class YahooWeatherInfo {
 
 	// Sunrise
 	private String sSunrise;
-	
+
 	// Wind Speed
+	private String sWindSpeed;
 
 	public YahooWeatherInfo() {
 		this(DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA,
 				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA,
-				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA);
+				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA);
 	}
 
 	public YahooWeatherInfo(String strCity, String strCountry, String strTemp,
-			String strHum, String strText, String strCode, String strDate,
-			String strTempUnit, String strVisi, String strSunset,
-			String strSunrise) {
+			String strHum, String strWindSpeed, String strText, String strCode,
+			String strDate, String strTempUnit, String strVisi,
+			String strSunset, String strSunrise) {
 		// TODO Auto-generated constructor stub
 		sCity = strCity;
 		sCountry = strCountry;
 		sTemperature = strTemp;
 		sHumidity = strHum;
+		sWindSpeed = strWindSpeed;
 		sText = strText;
 		sCode = strCode;
 		sDate = strDate;
@@ -171,5 +173,14 @@ public class YahooWeatherInfo {
 
 	public String getSunrise() {
 		return sSunrise;
+	}
+
+	// ================== 12 =================
+	public void setWindSpeed(String s_WindSpeed) {
+		sWindSpeed = s_WindSpeed;
+	}
+
+	public String getWindSpeed() {
+		return sWindSpeed;
 	}
 }

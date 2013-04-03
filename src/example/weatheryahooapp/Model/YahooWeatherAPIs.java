@@ -15,7 +15,7 @@ public class YahooWeatherAPIs {
 	// Elements of yahoo
 	private final static String ELEMENTS_YAHOO_LOCATION = "yweather:location";
 	private final static String ELEMENTS_YAHOO_UNITS = "yweather:units";
-	// private final static String ELEMENTS_YAHOO_WIND = "yweather:winds";
+	private final static String ELEMENTS_YAHOO_WIND = "yweather:wind";
 	private final static String ELEMENTS_YAHOO_ATMOSPHERE = "yweather:atmosphere";
 	private final static String ELEMENTS_YAHOO_ASTRONOMY = "yweather:astronomy";
 	private final static String ELEMENTS_YAHOO_CONDITION = "yweather:condition";
@@ -41,6 +41,9 @@ public class YahooWeatherAPIs {
 	// Attributes of elements "yweather:astronomy"
 	private static final String ATT_YAHOO_SUNSET = "sunset";
 	private static final String ATT_YAHOO_SUNRISE = "sunrise";
+
+	// Attributes of elements "yweather:wind"
+	private static final String ATT_YAHOO_WIND_SPEED = "speed";
 
 	// Attributes of elements "yweather:forecast"
 	private static String ATT_YAHOO_DATE_NEXTDAY = "";
@@ -92,6 +95,7 @@ public class YahooWeatherAPIs {
 		String strVisibility = null;
 		String strSunset = null;
 		String strSunrise = null;
+		String strWindSpeed = null;
 
 		// Info weather of nextday
 		String strDateNextDay = null;
@@ -153,6 +157,13 @@ public class YahooWeatherAPIs {
 			strSunrise = astronomyNode.getNamedItem(ATT_YAHOO_SUNRISE)
 					.getNodeValue();
 
+			// Info speed wind
+			NamedNodeMap windNode = root
+					.getElementsByTagName(ELEMENTS_YAHOO_WIND).item(0)
+					.getAttributes();
+			strWindSpeed = windNode.getNamedItem(ATT_YAHOO_WIND_SPEED)
+					.getNodeValue();
+
 			// Info Weather of nextday
 			NamedNodeMap yahooForecast = root
 					.getElementsByTagName(ELEMENTS_YAHOO_FORECAST).item(1)
@@ -165,7 +176,7 @@ public class YahooWeatherAPIs {
 
 		// Info yahoo weather
 		YahooWeatherInfo yahooWeatherInfo = new YahooWeatherInfo(strCity,
-				strCountry, strTempValue, strHumidity, strText, strCode,
+				strCountry, strTempValue, strHumidity, strWindSpeed, strText, strCode,
 				strDate, strTempUnit, strVisibility, strSunset, strSunrise);
 
 		return yahooWeatherInfo;

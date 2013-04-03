@@ -93,9 +93,12 @@ public class ActivityWeatherSetting extends Activity {
 	/** Time */
 	private TextView m_Date;
 
-	/** Info Weather Text*/
+	/** Info Weather Text */
 	private TextView m_Text;
-	
+
+	/** Info speed wind */
+	private TextView m_WindSpeed;
+
 	/** Icon */
 	private ImageView m_WeatherIcon;
 
@@ -306,6 +309,7 @@ public class ActivityWeatherSetting extends Activity {
 		m_Temperature = (TextView) findViewById(R.id.temperature);
 		m_Humimidy = (TextView) findViewById(R.id.humidityValue);
 		m_Visibility = (TextView) findViewById(R.id.visiValue);
+		m_WindSpeed = (TextView) findViewById(R.id.windSpeedValue);
 		m_WeatherIcon = (ImageView) findViewById(R.id.weather_icon);
 		m_Text = (TextView) findViewById(R.id.tv_text);
 		m_Date = (TextView) findViewById(R.id.tv_date);
@@ -315,7 +319,8 @@ public class ActivityWeatherSetting extends Activity {
 		if ((m_TextLocation == null) || (m_Temperature == null)
 				|| (m_Humimidy == null) || (m_WeatherIcon == null)
 				|| (m_Visibility == null) || (m_Sunset == null)
-				|| (m_Sunrise == null) || (m_Text == null)) {
+				|| (m_Sunrise == null) || (m_Text == null)
+				|| (m_WindSpeed == null)) {
 			Log.e(TAG, "View init failed");
 			return false;
 		}
@@ -388,11 +393,12 @@ public class ActivityWeatherSetting extends Activity {
 		strFmt = getString(R.string.str_visi_fmt);
 		String strVisi = String.format(strFmt, weatherInfo.getVisibility());
 		m_Visibility.setText(strVisi);
+		m_WindSpeed.setText(weatherInfo.getWindSpeed() + " mph");
 
 		// Get info about astronomy
 		m_Sunset.setText(weatherInfo.getSunset());
 		m_Sunrise.setText(weatherInfo.getSunrise());
-		
+
 		// Get info weather text
 		m_Text.setText(weatherInfo.getText());
 	}
