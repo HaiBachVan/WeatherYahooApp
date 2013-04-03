@@ -46,8 +46,19 @@ public class YahooWeatherInfo {
 	// Wind Speed
 	private String sWindSpeed;
 
+	// Temperature nextday
+	private String sLowTemp;
+	private String sMaxTemp;
+
+	// Code nextday
+	private String sCodeDay;
+
+	// Day
+	private String sNextDay;
+
 	public YahooWeatherInfo() {
 		this(DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA,
+				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA,
 				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA,
 				DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA, DEFAULT_DATA);
 	}
@@ -55,7 +66,8 @@ public class YahooWeatherInfo {
 	public YahooWeatherInfo(String strCity, String strCountry, String strTemp,
 			String strHum, String strWindSpeed, String strText, String strCode,
 			String strDate, String strTempUnit, String strVisi,
-			String strSunset, String strSunrise) {
+			String strSunset, String strSunrise, String strLowTemp, String strMaxTemp,
+			String strDay, String strCodeDay) {
 		// TODO Auto-generated constructor stub
 		sCity = strCity;
 		sCountry = strCountry;
@@ -69,6 +81,11 @@ public class YahooWeatherInfo {
 		sVisibility = strVisi;
 		sSunset = strSunset;
 		sSunrise = strSunrise;
+		
+		sLowTemp = strLowTemp;
+		sMaxTemp = strMaxTemp;
+		sNextDay = strDay;
+		sCodeDay = strCodeDay;
 	}
 
 	// ================ 1 ====================
@@ -182,5 +199,41 @@ public class YahooWeatherInfo {
 
 	public String getWindSpeed() {
 		return sWindSpeed;
+	}
+
+	// ================== 13 =================
+	public void setNextDay(String s_NextDay) {
+		sNextDay = s_NextDay;
+	}
+
+	public String getNextDay() {
+		return sNextDay;
+	}
+
+	// ================== 14 =================
+	public void setLowTemp(String s_LowTemp) {
+		sLowTemp = s_LowTemp;
+	}
+
+	public String getLowTemp() {
+		return sLowTemp;
+	}
+
+	// ================== 15 =================
+	public void setMaxTemp(String s_MaxTemp) {
+		sMaxTemp = s_MaxTemp;
+	}
+
+	public String getMaxTemp() {
+		return sMaxTemp;
+	}
+
+	// ================== 16 =================
+	public void setCodeDaY(String s_CodeDay) {
+		sCodeDay = s_CodeDay;
+	}
+
+	public String getCodeDay() {
+		return sCodeDay;
 	}
 }

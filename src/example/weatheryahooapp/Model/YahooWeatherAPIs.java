@@ -46,9 +46,9 @@ public class YahooWeatherAPIs {
 	private static final String ATT_YAHOO_WIND_SPEED = "speed";
 
 	// Attributes of elements "yweather:forecast"
-	private static String ATT_YAHOO_DATE_NEXTDAY = "";
+	private static String ATT_YAHOO_DATE_NEXTDAY = "day";
 	private static String ATT_YAHOO_LOW_TEMP = "low";
-	private static String ATT_YAHOO_MAX_TEMP = "max";
+	private static String ATT_YAHOO_MAX_TEMP = "high";
 
 	// Image about info weather
 	public static int[][] arrImage = { { R.drawable.a0, 0 },
@@ -101,6 +101,7 @@ public class YahooWeatherAPIs {
 		String strDateNextDay = null;
 		String strLowTemp = null;
 		String strMaxTemp = null;
+		String strCodeNextDay = null;
 
 		try {
 			Element root = docWeather.getDocumentElement();
@@ -168,7 +169,14 @@ public class YahooWeatherAPIs {
 			NamedNodeMap yahooForecast = root
 					.getElementsByTagName(ELEMENTS_YAHOO_FORECAST).item(1)
 					.getAttributes();
-			// strDateNextDay = yahooForecast.getNamedItem(ATT_YA)
+			strDateNextDay = yahooForecast.getNamedItem(ATT_YAHOO_DATE_NEXTDAY)
+					.getNodeValue();
+			strLowTemp = yahooForecast.getNamedItem(ATT_YAHOO_LOW_TEMP)
+					.getNodeValue();
+			strMaxTemp = yahooForecast.getNamedItem(ATT_YAHOO_MAX_TEMP)
+					.getNodeValue();
+			strCodeNextDay = yahooForecast.getNamedItem(ATT_YAHOO_CODE)
+					.getNodeValue();
 		} catch (Exception e) {
 			Log.e(TAG, "Something wroing with parser data");
 			return null;
@@ -176,9 +184,12 @@ public class YahooWeatherAPIs {
 
 		// Info yahoo weather
 		YahooWeatherInfo yahooWeatherInfo = new YahooWeatherInfo(strCity,
-				strCountry, strTempValue, strHumidity, strWindSpeed, strText, strCode,
-				strDate, strTempUnit, strVisibility, strSunset, strSunrise);
+				strCountry, strTempValue, strHumidity, strWindSpeed, strText,
+				strCode, strDate, strTempUnit, strVisibility, strSunset,
+				strSunrise, strLowTemp, strMaxTemp, strDateNextDay,
+				strCodeNextDay);
 
 		return yahooWeatherInfo;
+
 	}
 }

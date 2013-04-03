@@ -134,7 +134,8 @@
                         android:textStyle="bold" />
                 </TableRow>
 
-                <TableRow>
+                <TableRow
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="60dp"

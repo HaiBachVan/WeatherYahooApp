@@ -101,6 +101,11 @@ public class ActivityWeatherSetting extends Activity {
 
 	/** Icon */
 	private ImageView m_WeatherIcon;
+	
+	/** Weather Info NextDay */
+	private TextView m_LowTemp;
+	private TextView m_MaxTemp;
+	private TextView m_NextDay;
 
 	/** Handle request */
 	Handler m_HandleRequest;
@@ -315,6 +320,11 @@ public class ActivityWeatherSetting extends Activity {
 		m_Date = (TextView) findViewById(R.id.tv_date);
 		m_Sunset = (TextView) findViewById(R.id.tv_sunset);
 		m_Sunrise = (TextView) findViewById(R.id.tv_sunrise);
+		
+		// Initialize
+		m_LowTemp = (TextView) findViewById(R.id.tv_low_temp);
+		m_MaxTemp = (TextView) findViewById(R.id.tv_max_temp);
+		m_NextDay = (TextView) findViewById(R.id.tv_day);
 
 		if ((m_TextLocation == null) || (m_Temperature == null)
 				|| (m_Humimidy == null) || (m_WeatherIcon == null)
@@ -401,6 +411,11 @@ public class ActivityWeatherSetting extends Activity {
 
 		// Get info weather text
 		m_Text.setText(weatherInfo.getText());
+		
+		// Get info weather nextday
+		m_LowTemp.setText(weatherInfo.getLowTemp());
+		m_MaxTemp.setText(weatherInfo.getMaxTemp());
+		m_NextDay.setText(weatherInfo.getNextDay());
 	}
 
 	private int getImageByCode(String strCode) {
