@@ -93,6 +93,9 @@ public class ActivityWeatherSetting extends Activity {
 	/** Time */
 	private TextView m_Date;
 
+	/** Info Weather Text*/
+	private TextView m_Text;
+	
 	/** Icon */
 	private ImageView m_WeatherIcon;
 
@@ -234,7 +237,7 @@ public class ActivityWeatherSetting extends Activity {
 	}
 
 	private void selectTimeIntervalUpdating() {
-		final CharSequence[] items = { "30 minutes", "3 hours", "12 hours" };
+		final CharSequence[] items = { "5 minutes", "1 hours", "12 hours" };
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.selectTimeUpdate);
@@ -242,13 +245,13 @@ public class ActivityWeatherSetting extends Activity {
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
 						/* Check to update setting */
-						int nTime = 30;
+						int nTime = 5;
 						switch (item) {
 						case SELECT_ITEM_1:
-							nTime = 30;
+							nTime = 5;
 							break;
 						case SELECT_ITEM_2:
-							nTime = 180;
+							nTime = 60;
 						case SELECT_ITEM_3:
 							nTime = 720;
 							break;
@@ -304,14 +307,15 @@ public class ActivityWeatherSetting extends Activity {
 		m_Humimidy = (TextView) findViewById(R.id.humidityValue);
 		m_Visibility = (TextView) findViewById(R.id.visiValue);
 		m_WeatherIcon = (ImageView) findViewById(R.id.weather_icon);
-		m_Date = (TextView) findViewById(R.id.dateTime);
+		m_Text = (TextView) findViewById(R.id.tv_text);
+		m_Date = (TextView) findViewById(R.id.tv_date);
 		m_Sunset = (TextView) findViewById(R.id.tv_sunset);
 		m_Sunrise = (TextView) findViewById(R.id.tv_sunrise);
 
 		if ((m_TextLocation == null) || (m_Temperature == null)
 				|| (m_Humimidy == null) || (m_WeatherIcon == null)
-				|| (m_Visibility == null) || (m_Date == null)
-				|| (m_Sunset == null) || (m_Sunrise == null)) {
+				|| (m_Visibility == null) || (m_Sunset == null)
+				|| (m_Sunrise == null) || (m_Text == null)) {
 			Log.e(TAG, "View init failed");
 			return false;
 		}
@@ -384,10 +388,13 @@ public class ActivityWeatherSetting extends Activity {
 		strFmt = getString(R.string.str_visi_fmt);
 		String strVisi = String.format(strFmt, weatherInfo.getVisibility());
 		m_Visibility.setText(strVisi);
-		
+
 		// Get info about astronomy
 		m_Sunset.setText(weatherInfo.getSunset());
 		m_Sunrise.setText(weatherInfo.getSunrise());
+		
+		// Get info weather text
+		m_Text.setText(weatherInfo.getText());
 	}
 
 	private int getImageByCode(String strCode) {

@@ -26,9 +26,9 @@
     <string name="strGetSuccess">Weather updated</string>
     <string name="strUpdating">Updating weather of location</string>
     <string name="tv_tempe">***</string>
-    <string name="tv_humidity">Humidity</string>
+    <string name="tv_humidity">Humd</string>
     <string name="tv_no_data">***</string>
-    <string name="tv_visibility">Visibility</string>
+    <string name="tv_visibility">Vsb</string>
     <string name="str_temperature_fmt">%s°C</string>
     <string name="str_temperature_fmt_f">%s°F</string>
     <string name="str_humidity_fmt">%s%%</string>
@@ -42,10 +42,11 @@
     <string name="selectTemperatureUnit">Set your prefer unit</string>
 
     <!-- Demo about data -->
-    <string name="demo_location">United Stated</string>
-    <string name="demo_temp">30</string>
+    <string name="demo_location">***</string>
+    <string name="demo_temp">***</string>
     
-    <string name="demo_date">Fri Mar 22 7:07 AM</string>
+    <string name="tv_wind_speed">Wind</string>
+    <string name="demo_date">***</string>
     <string name="str_sunset">Sunset</string>
     <string name="str_sunrise">Sunrise</string>
     <string name="str_max_temp">max</string>

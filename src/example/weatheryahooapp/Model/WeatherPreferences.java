@@ -71,7 +71,7 @@ public class WeatherPreferences {
 		SharedPreferences preferences = m_Context.getSharedPreferences(
 				WEATHER_PREFERENCE, Context.MODE_PRIVATE);
 
-		return preferences.getInt(KEY_TIME_UPDATE, 30);
+		return preferences.getInt(KEY_TIME_UPDATE, 5);
 	}
 
 	public void setTempFmt(boolean bIsAccept) {

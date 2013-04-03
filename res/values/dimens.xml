@@ -10,9 +10,12 @@
     <dimen name="text_large">15.0sp</dimen>
     <dimen name="text_title">20.0sp</dimen>
     <dimen name="temperature_size">50.0sp</dimen>
-    <dimen name="location_size">20.0sp</dimen>
+    <dimen name="weather_text">20.0sp</dimen>
+    <dimen name="date_temp_size">20.0sp</dimen>
+    <dimen name="location_size">25.0sp</dimen>
     <dimen name="weather_space">150.0dip</dimen>
     <dimen name="weather_size">25.0sp</dimen>
+    <dimen name="date_size">10sp</dimen>
 
     <!-- For context menu -->
     <!-- Context menu -->

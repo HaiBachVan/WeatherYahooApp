@@ -15,7 +15,7 @@ public class YahooWeatherAPIs {
 	// Elements of yahoo
 	private final static String ELEMENTS_YAHOO_LOCATION = "yweather:location";
 	private final static String ELEMENTS_YAHOO_UNITS = "yweather:units";
-	//private final static String ELEMENTS_YAHOO_WIND = "yweather:winds";
+	// private final static String ELEMENTS_YAHOO_WIND = "yweather:winds";
 	private final static String ELEMENTS_YAHOO_ATMOSPHERE = "yweather:atmosphere";
 	private final static String ELEMENTS_YAHOO_ASTRONOMY = "yweather:astronomy";
 	private final static String ELEMENTS_YAHOO_CONDITION = "yweather:condition";
@@ -46,7 +46,7 @@ public class YahooWeatherAPIs {
 	private static String ATT_YAHOO_DATE_NEXTDAY = "";
 	private static String ATT_YAHOO_LOW_TEMP = "low";
 	private static String ATT_YAHOO_MAX_TEMP = "max";
-	
+
 	// Image about info weather
 	public static int[][] arrImage = { { R.drawable.a0, 0 },
 			{ R.drawable.a1, 1 }, { R.drawable.a2, 2 }, { R.drawable.a3, 3 },
@@ -92,13 +92,12 @@ public class YahooWeatherAPIs {
 		String strVisibility = null;
 		String strSunset = null;
 		String strSunrise = null;
-		
-		
+
 		// Info weather of nextday
 		String strDateNextDay = null;
 		String strLowTemp = null;
 		String strMaxTemp = null;
-		
+
 		try {
 			Element root = docWeather.getDocumentElement();
 			root.normalize();
@@ -153,11 +152,12 @@ public class YahooWeatherAPIs {
 					.getNodeValue();
 			strSunrise = astronomyNode.getNamedItem(ATT_YAHOO_SUNRISE)
 					.getNodeValue();
-			
-			
+
 			// Info Weather of nextday
-			NamedNodeMap yahooForecast = root.getElementsByTagName(ELEMENTS_YAHOO_FORECAST).item(1).getAttributes();
-			//strDateNextDay = yahooForecast.getNamedItem(ATT_YA)
+			NamedNodeMap yahooForecast = root
+					.getElementsByTagName(ELEMENTS_YAHOO_FORECAST).item(1)
+					.getAttributes();
+			// strDateNextDay = yahooForecast.getNamedItem(ATT_YA)
 		} catch (Exception e) {
 			Log.e(TAG, "Something wroing with parser data");
 			return null;
